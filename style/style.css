@@ -1,0 +1,291 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    background: black;
+    min-height: 100vh;
+    overflow-x: hidden;
+
+}
+@keyframes greetimg{
+    0%{
+        opacity: 0;
+    }30%{
+        opacity: 1;
+    }80%{
+        opacity: 1;
+    }100%{
+        opacity: 0;
+    }
+}
+
+.wellcome{
+    height: 100vh;
+    align-content: center;
+    display: none;
+    text-align: center;
+    animation: greetimg 4s 1 forwards;
+    & img{
+      width: 500px;
+
+    }
+}
+header{
+    display: flex;
+    justify-content: space-around;
+    height: 130px;
+    align-items: center;
+
+}
+
+.controls{
+    min-height: 80vh;
+    height: 350px;
+    width: 350px;
+    margin:0 auto ;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    position: relative;
+    &::after{
+        content: "Моя волна";
+        width: 200px;
+        font-size: 2rem;
+        font-weight: bold;
+        font-family: Arial, Helvetica, sans-serif;
+        position: absolute;
+        color: white;
+        left: calc(50% - 100px);
+        top: 35%;
+    }
+    & button{
+        background: none;
+        border: none;
+        outline: none;
+        transition: all .2s ease;
+
+        &:hover{
+            transform: scale(1.1);
+            cursor: pointer;
+        }
+
+        & img{
+            width: 30px;
+        }
+    }
+}
+.design-item{
+    width: 250px;
+    height: 250px;
+    background: blue;
+    animation: morph 15s infinite linear, rotateColors 8s infinite linear;
+    position: absolute;
+    left: calc(50% - 125px);
+    top: calc(50% - 125px);
+    z-index: -1;
+    filter: blur(25px);
+}
+
+
+.audio-panel{
+    width: 300px;
+    height: 42px;
+    background: linear-gradient(120deg,rgb(24,24,24),black);
+    position: fixed;
+    bottom: 50px;
+    border-top: 2px solid rgb(26,26,26);
+    left: calc(50% - 150px);
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column-reverse;
+    align-items: center;
+    justify-content: flex-end;
+    color: white;
+    overflow: hidden;
+    
+}
+.audio-progress{
+    width: 100%;
+    height: 5px;
+    background: rgb(27,27,27);
+}
+.audio-progress-bar{
+    height: 100%;
+    width: 0;
+    background: cyan;
+}
+
+.audio-name{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+}
+#mute{
+background: none;
+border: none;
+outline: none;
+cursor: pointer;
+& img{
+    width: 20px;
+}
+}
+#repeat{
+background: none;
+border: none;
+outline: none;
+cursor: pointer;
+& img{
+    width: 20px;
+}
+}
+
+.audio-percent{
+    font-family: Arial, Helvetica, sans-serif;
+
+}
+
+.upload-music{
+    width: 300px;
+    height: 250px;
+    border-top: 2px solid rgb(24,24,24);
+    border-radius: 30px;
+    background: linear-gradient(120deg,rgb(22,22,22),black);
+    position: fixed;
+    left: calc(50% - 150px);
+    top: calc(50% - 125px);
+    padding: 20px;
+    animation: fadeIn 1s 1;
+    color: white;
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+
+    & p{
+        font-size: 1.2rem;
+        font-family: Arial, Helvetica, sans-serif;
+    }
+}
+
+.upload-music-drop-zone{
+    width: 100%;
+    height: 50%;
+    box-shadow: inset 0px 0px 10px rgb(119, 32, 0);
+}
+
+.upload-music-save{
+    width: 80px;
+    height: 30px;
+    font-size: 12px;
+    background: rgb(182, 119, 2);
+    color: white;
+    border: none;
+    border-radius: 5px;
+}
+
+#upload-file{
+    display: none;
+}
+
+.playlist{
+    width: 500px;
+    height: 70vh; 
+    border-radius: 30px;
+    position: fixed;
+    top: calc(50% - 30vh);
+    left: calc(50% - 250px);
+    background: linear-gradient(120deg,rgb(68, 68, 68) 0,1%,rgba(44, 44, 44, 0.5));
+    backdrop-filter: blur(20px);
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+}
+
+.playlist-card{
+    width: 75%;
+    height: 55px;
+    box-shadow: 3px 4px 2px rgb(175, 175, 175);
+    border-radius: 12px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    font-size: 1rem;
+    color: white;
+
+    & img{
+        width: 30px;
+    }
+
+}
+
+#playlist-btn{
+    position: fixed;
+    left: 10px;
+    bottom: 10px;
+    background: none;
+    outline: none;
+    border: none;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+
+    border: 1px solid orange;
+}
+
+.active{
+    display: flex;
+    
+}
+
+@keyframes fadeIn{
+    0%{
+        opacity: 0;
+    }100%{
+        opacity: 1;
+    }
+}
+
+@keyframes rotateColors{
+    0% {
+        background-color: red;
+    }20%{
+        background-color: orange;
+    }40%{
+        background-color: yellow;
+    }60%{
+        background-color:green ;
+    }80%{
+        background-color: blue;
+    }90%{
+        background: violet;
+    }100%{
+        background: rgb(255, 23, 23);
+    }
+}
+
+@keyframes morph {
+
+    0%{
+        border-radius: 40% 60% 70% 30% / 30% 70% 60% 40%;
+        transform: translate(0,0) scale(1);
+    }25%{
+        border-radius: 60% 40% 50% 50% / 50% 60% 40% 60%;
+        transform: translate(-50px,-20px) scale(1.1);
+    }50%{
+        border-radius: 50% 50% 60% 40% / 60% 50% 40% 50%;
+        transform: translate(50px,-30px) scale(1.2);
+    }75%{
+        border-radius: 70% 30% 40% 60% / 40% 60% 30% 70%;
+        transform: translate(-20px,-50px) scale(1.1);
+    }100%{
+        border-radius: 40% 60% 70% 30% / 30% 70% 60% 40%;
+        transform: translate(0,0) scale(1);
+    }
+    
+}

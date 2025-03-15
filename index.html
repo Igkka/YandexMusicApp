@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./style/style.css">
+    <script src="./src/index.js" defer></script>
+</head>
+<body>
+
+    <div id="root">
+
+
+        <header>
+            <div class="logo">
+                <img width="70px" src="./assets/ico96.png" alt="">
+            </div>
+    
+            <div class="upload">
+                <img width="50px" src="./assets/controls/upload.png" alt="">
+            </div>
+    
+    
+    
+        </header>
+    
+        <div class="wellcome">
+            <img loading="eager" src="../../assets/logo.png" alt="Логотип">
+        </div>
+        
+        <div class="design-item"></div>
+        <div class="design-item"></div>
+        <div class="design-item"></div>
+        
+        <article class="controls">
+            <button id="prew"><img src="./assets/controls/prew.png" alt=""></button>
+            <button id="play"><img id="play-btn" src="./assets/controls/play.png" alt=""></button>
+            <button id="next"><img src="./assets/controls/next.png" alt=""></button>
+        </article>
+
+
+        <article class="audio-panel">
+            <div class="audio-name">
+                <button id="repeat"><img src="./assets/controls/repeat.png" alt=""></button>
+                <span id="audio-percent">0%</span>
+                <button id="mute"><img src="./assets/controls/mute.png" alt=""></button>
+            </div>
+            <div class="audio-progress">
+            <div class="audio-progress-bar"></div>
+        </div>
+        </article>
+
+        <article class="upload-music">
+
+            <p>Загрузить аудио</p>
+
+            <div class="upload-music-drop-zone"></div>
+
+            <div>
+                <input id="upload-file" type="file" accept="audio/*">
+                <button class="upload-music-save">Сохранить</button>
+            </div>
+        </article>
+
+
+        <article class="playlist">
+
+        </article>
+
+        <button id="playlist-btn">
+            <img src="./assets/controls/playList.png" alt="">
+        </button>
+
+    </div>
+
+
+    
+</body>
+</html>
