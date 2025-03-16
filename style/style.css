@@ -199,25 +199,27 @@ cursor: pointer;
     position: fixed;
     top: calc(50% - 30vh);
     left: calc(50% - 250px);
-    background: linear-gradient(120deg,rgb(68, 68, 68) 0,1%,rgba(44, 44, 44, 0.5));
+    background: linear-gradient(120deg,rgba(27, 26, 26, 0.514) 0,1%,rgba(32, 32, 32, 0.5));
     backdrop-filter: blur(20px);
     display: none;
     flex-direction: column;
+    justify-content: center;
     align-items: center;
     gap: 10px;
+    animation: fadeIn .4s 1;
 }
 
 .playlist-card{
     width: 75%;
     height: 55px;
-    box-shadow: 3px 4px 2px rgb(175, 175, 175);
+    border: 1px solid rgb(175, 175, 175);
     border-radius: 12px;
     display: flex;
     justify-content: space-around;
     align-items: center;
     font-size: 1rem;
     color: white;
-
+    
     & img{
         width: 30px;
     }
@@ -241,6 +243,14 @@ cursor: pointer;
 .active{
     display: flex;
     
+}
+
+@media screen  and (max-width: 768px) {
+    .playlist{
+        width: 400px;
+        top: calc(50% - 30vh);
+        left: calc(50% - 200px);
+    }
 }
 
 @keyframes fadeIn{
